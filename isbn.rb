@@ -4,8 +4,8 @@ def isbn(input)
   summed_figure = split_array.each_with_index.inject(0) do |sum, (n, index)|
     sum + n * ((index % 2 == 0) ? 1 : 3)
   end
-  sentinel = (10 - (summed_figure % 10)) % 10
-  return "#{input}#{sentinel}"
+  check_digit = (10 - (summed_figure % 10)) % 10
+  return "#{input}#{check_digit}"
 end
 
 # expect "9780060525590"
